@@ -39,8 +39,8 @@
 </head>
 <body>
     <form action="" method="post">
-        <input type="text" name="usernameInput" id="usernameInput">
-        <input type="password" name="passInput" id="passInput">
+        <input type="text" name="usernameInput" id="usernameInput" required>
+        <input type="password" name="passInput" id="passInput" required>
         <button type="submit">Submit</button>
     </form>
     <a href="index.php">
