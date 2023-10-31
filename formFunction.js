@@ -3,7 +3,6 @@ const birthdayValue = document.getElementById("day");
 const monthValue = document.getElementById("month");
 const yearValue = document.getElementById("year");
 const ageValue = document.getElementById("age");
-const button = document.getElementById("buttonCheck");
 const yearNow = new Date().getFullYear();
 var monthInput = 0;
 
@@ -65,10 +64,6 @@ yearValue.addEventListener("change", (event) => {
     } else {
         updateAgeValue();
     }
-});
-
-button.addEventListener("click", () => {
-    alert(ageValue.value);
 });
 
 // Function to update ageValue

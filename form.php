@@ -66,7 +66,11 @@
 
         <button type="submit">Submit</button> <br>
     </form>
-    <button type="button" id="buttonCheck">Click to check</button>
+    <a href="index.php">
+        <button>
+            Back
+        </button>
+    </a>
     <script type="text/javascript" src="formFunction.js">
     </script>
 </body>
