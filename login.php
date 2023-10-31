@@ -4,9 +4,30 @@
 
     $result = $conn->query($sqlSelect);
 
-    while($row = $result->fetch_assoc()){
-        echo $row["password"];
-    };
+    if(isset($_POST["passInput"])){
+        if(isset($_POST["usernameInput"])){
+            $username = $_POST["usernameInput"];
+        };
+        $pass = $_POST["passInput"];
+
+        $accountFound = false;
+        while($row = $result->fetch_assoc()){
+            if($row["password"]  == $pass && $row["username"] == $username){
+                $userArray = [$row["lname"], $row["minitial"], $row["lname"], $row["birthdate"], $row["age"], $row["gender"], $row["region"], $row["phone"], $row["email"], $row["username"]];
+                $queryString = http_build_query(["data" => $userArray]);
+                header("Location: dashboard.php?$queryString");
+                
+                $accountFound = true;
+                break;
+            }
+            else{
+                
+            }
+        }
+        if(!$accountFound) {
+            echo "Account not found";
+        }
+    };   
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +38,15 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="dashboard.php">
-        
+    <form action="" method="post">
+        <input type="text" name="usernameInput" id="usernameInput">
+        <input type="password" name="passInput" id="passInput">
+        <button type="submit">Submit</button>
     </form>
+    <a href="index.php">
+        <button>
+            Back
+        </button>
+    </a>
 </body>
 </html>
