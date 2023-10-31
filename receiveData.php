@@ -2,11 +2,21 @@
     $fname = $_POST["fname"];
     $minitial = $_POST["minitial"];
     $lname = $_POST["lname"];
+    $month = $_POST["month"];
+    $day = $_POST["day"];
+    $year = $_POST["year"];
     $age = $_POST["age"];
+    $gender = $_POST["gender"];
     $region = $_POST["region"];
+    $phone = $_POST["phone"];
+    $email = $_POST["email"];
     $username = $_POST["username"];
     $password = $_POST["password"];
     $confirmpass = $_POST["confirmpass"];
+
+    $birthdate = "$month/$day/$year";
+
+    echo $birthdate;
 
     $conn = new mysqli("localhost", "root", "", "registrationAct2");
 
@@ -14,7 +24,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
     
-    $sqlinsert = "INSERT INTO user (fname, minitial, lname, age, region, username, password) VALUES ('$fname', '$minitial', '$lname', '$age', '$region', '$username', '$password')";
+    $sqlinsert = "INSERT INTO user (fname, minitial, lname, birthdate, age, gender, region, phone, email, username, password) VALUES ('$fname', '$minitial', '$lname', '$birthdate', '$age', '$gender', '$region', '$phone', '$email', '$username', '$password')";
     
     if($password === $confirmpass){
         echo "Password match!";
@@ -47,9 +57,9 @@
 </head>
 <body>
     <script>
-        //document.addEventListener("DOMContentLoaded", () => {
-         //   window.location.href = "form.php"
-        //})
+        document.addEventListener("DOMContentLoaded", () => {
+           window.location.href = "index.php"
+        })
     </script>
 </body>
 </html>

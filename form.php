@@ -14,7 +14,7 @@
         <input type="text" name="minitial" id="minitial" placeholder="D.">
         <label for="lname">Last Name: </label>
         <input type="text" name="lname" id="lname" placeholder="Dela Cruz" required> <br>
-        <label for="birthday">Birthday: </label> <br>
+        <label for="birthday">Birth Date: </label> <br>
         <label for="month">Month: </label>
         <input type="number" name="month" id="month">
         <label for="day">Day: </label>
@@ -22,7 +22,7 @@
         <label for="year">Year: </label>
         <input type="number" name="year" id="year"> <br>
         <label for="age">Age:</label>
-        <input type="number" name="age" id="age" disabled> <br>
+        <input type="number" name="age" id="age"> <br>
         <label for="gender">Gender:</label> <br>
         <input type="radio" name="gender" id="male" value="male" required>
         <label for="male">Male</label> <br>
