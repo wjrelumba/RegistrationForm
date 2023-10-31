@@ -1,5 +1,6 @@
 <?php
     $fname = $_POST["fname"];
+    $minitial = $_POST["minitial"];
     $lname = $_POST["lname"];
     $age = $_POST["age"];
     $region = $_POST["region"];
@@ -13,7 +14,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
     
-    $sqlinsert = "INSERT INTO user (fname, lname, age, region, username, password) VALUES ('$fname', '$lname', '$age', '$region', '$username', '$password')";
+    $sqlinsert = "INSERT INTO user (fname, minitial, lname, age, region, username, password) VALUES ('$fname', '$minitial', '$lname', '$age', '$region', '$username', '$password')";
     
     if($password === $confirmpass){
         echo "Password match!";
