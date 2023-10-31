@@ -26,12 +26,7 @@
     
     $sqlinsert = "INSERT INTO user (fname, minitial, lname, birthdate, age, gender, region, phone, email, username, password) VALUES ('$fname', '$minitial', '$lname', '$birthdate', '$age', '$gender', '$region', '$phone', '$email', '$username', '$password')";
     
-    if($password === $confirmpass){
-        echo "Password match!";
-        $insertForm = $conn->query($sqlinsert);
-    }else{
-        echo "Password do not match!";
-    }
+    $insertForm = $conn->query($sqlinsert);
 
     $sql = "SELECT * FROM user";
     $result = $conn->query($sql);

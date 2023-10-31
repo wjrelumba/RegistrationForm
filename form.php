@@ -64,7 +64,7 @@
         <label for="confirmpass">Confirm Password: </label>
         <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirm Password"> <br>
 
-        <button type="submit">Submit</button> <br>
+        <button type="submit" id="submitBtn">Submit</button> <br>
     </form>
     <a href="index.php">
         <button>

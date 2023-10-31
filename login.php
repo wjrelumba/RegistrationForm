@@ -38,6 +38,7 @@
     <title>Login</title>
 </head>
 <body>
+    <h1>Account Login</h1>
     <form action="" method="post">
         <input type="text" name="usernameInput" id="usernameInput" required>
         <input type="password" name="passInput" id="passInput" required>

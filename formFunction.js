@@ -1,10 +1,18 @@
 const maleRadioValue = document.getElementById("male");
+const femaleRadioValue = document.getElementById("female");
+const othersRadioValue = document.getElementById("others");
 const birthdayValue = document.getElementById("day");
 const monthValue = document.getElementById("month");
 const yearValue = document.getElementById("year");
 const ageValue = document.getElementById("age");
 const yearNow = new Date().getFullYear();
+
+const submitBtn = document.getElementById("submitBtn");
+const password = document.getElementById("password");
+const confirmpass = document.getElementById("confirmpass");
 var monthInput = 0;
+
+submitBtn.type = "button";
 
 maleRadioValue.addEventListener("click", (event) => {
     const genderInput = document.getElementById("gender");
@@ -12,10 +20,20 @@ maleRadioValue.addEventListener("click", (event) => {
     genderInput.value = event.target.value;
 });
 
-// ... (other radio button event listeners)
+femaleRadioValue.addEventListener("click", (event) => {
+    const genderInput = document.getElementById("gender");
+    genderInput.disabled = true;
+    genderInput.value = event.target.value;
+});
+
+othersRadioValue.addEventListener("click", (event) => {
+    const genderInput = document.getElementById("gender");
+    genderInput.disabled = false;
+    genderInput.value = "";
+});
 
 monthValue.addEventListener("change", (event) => {
-    birthdayValue.value = 0;
+    birthdayValue.value = 1;
     const value = event.target.value;
     monthInput = value;
     if (value !== null) {
@@ -65,6 +83,26 @@ yearValue.addEventListener("change", (event) => {
         updateAgeValue();
     }
 });
+
+confirmpass.addEventListener("change", (event) => {
+    const confirmValue = event.target.value;
+    if(confirmValue === password.value){
+        submitBtn.type = "submit";
+    }
+    else{
+        submitBtn.type = "button";
+    }
+})
+
+submitBtn.addEventListener("click", () => {
+    if(password.value != confirmpass.value){
+        alert("Passwords do not match");
+        submitBtn.type = "button";
+    }
+    else{
+        submitBtn.type = "submit";
+    }
+})
 
 // Function to update ageValue
 function updateAgeValue() {
