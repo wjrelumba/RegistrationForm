@@ -16,20 +16,18 @@
         <label for="lname">Last Name: </label>
         <input type="text" name="lname" id="lname" placeholder="Dela Cruz" required> <br>
         <label for="birthday">Birth Date: </label> <br>
-        <label for="month">Month: </label>
-        <input type="number" name="month" id="month">
-        <label for="day">Day: </label>
-        <input type="number" name="day" id="day" disabled>
-        <label for="year">Year: </label>
-        <input type="number" name="year" id="year"> <br>
+        <input type="date" name="birthdate" id="birthdate">
+        <input type="number" name="month" id="month" hidden>
+        <input type="number" name="day" id="day" hidden>
+        <input type="number" name="year" id="year" hidden> <br>
         <label for="age">Age:</label>
         <input type="number" name="age" id="age"> <br>
         <label for="gender">Gender:</label> <br>
-        <input type="radio" name="gender" id="male" value="male" required>
+        <input type="radio" name="gender" id="male" value="Male" required>
         <label for="male">Male</label> <br>
-        <input type="radio" name="gender" id="female" value="female" required>
+        <input type="radio" name="gender" id="female" value="Female" required>
         <label for="female">Female</label> <br>
-        <input type="radio" name="gender" id="others" value="others" required>
+        <input type="radio" name="gender" id="others" value="Others" required>
         <label for="others">Others</label> <br>
         <input type="text" name="gender" id="gender" disabled> <br>
         <label for="region">Region:</label>
@@ -64,9 +62,14 @@
         <input type="password" name="password" id="password" placeholder="Password"> <br>
         <label for="confirmpass">Confirm Password: </label>
         <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirm Password"> <br>
+        
 
+        <button type="button" id="checkerBtn">
+        Check data
+        </button>
         <button type="submit" id="submitBtn">Submit</button> <br>
     </form>
+    
     <a href="index.php">
         <button>
             Back

@@ -1,18 +1,27 @@
 const maleRadioValue = document.getElementById("male");
 const femaleRadioValue = document.getElementById("female");
 const othersRadioValue = document.getElementById("others");
-const birthdayValue = document.getElementById("day");
-const monthValue = document.getElementById("month");
-const yearValue = document.getElementById("year");
+const birthdayInputValue = document.getElementById("day");
+const monthInputValue = document.getElementById("month");
+const yearInputValue = document.getElementById("year");
 const ageValue = document.getElementById("age");
-const yearNow = new Date().getFullYear();
+const dateToday = new Date();
+const yearNow = dateToday.getFullYear();
+const dayNow = dateToday.getDate();
+const monthNow = dateToday.getMonth() + 1;
+
+const birthdate = document.getElementById("birthdate");
 
 const submitBtn = document.getElementById("submitBtn");
+const checkBtn = document.getElementById("checkerBtn");
 const password = document.getElementById("password");
 const confirmpass = document.getElementById("confirmpass");
 var monthInput = 0;
 
 submitBtn.type = "button";
+
+var ageValueInput = 0;
+
 
 maleRadioValue.addEventListener("click", (event) => {
     const genderInput = document.getElementById("gender");
@@ -32,58 +41,6 @@ othersRadioValue.addEventListener("click", (event) => {
     genderInput.value = "";
 });
 
-monthValue.addEventListener("change", (event) => {
-    birthdayValue.value = 1;
-    const value = event.target.value;
-    monthInput = value;
-    if (value !== null) {
-        birthdayValue.disabled = false;
-    }
-    if (value > 12) {
-        monthInput = 12;
-        event.target.value = 12;
-    } else if (value < 1) {
-        monthInput = 1;
-        event.target.value = 1;
-    }
-    updateAgeValue();
-});
-
-birthdayValue.addEventListener("change", (event) => {
-    const value = event.target.value;
-    if (monthInput == 1 || monthInput == 3 || monthInput == 5 || monthInput == 7 || monthInput == 8 || monthInput == 10 || monthInput == 12) {
-        if (value > 31) {
-            event.target.value = 31;
-        }
-    }
-    if (monthInput == 2) {
-        if (value > 28) {
-            event.target.value = 28;
-        }
-    }
-    if (monthInput == 4 || monthInput == 6 || monthInput == 9 || monthInput == 11) {
-        if (value > 30) {
-            event.target.value = 30;
-        }
-    }
-    updateAgeValue();
-});
-
-yearValue.addEventListener("change", (event) => {
-    const value = event.target.value;
-    const minimum = 1950;
-    const requiredYears = yearNow - 10;
-    if (value > requiredYears) {
-        event.target.value = requiredYears;
-        updateAgeValue();
-    } else if (value < minimum) {
-        event.target.value = minimum;
-        updateAgeValue();
-    } else {
-        updateAgeValue();
-    }
-});
-
 confirmpass.addEventListener("change", (event) => {
     const confirmValue = event.target.value;
     if(confirmValue === password.value){
@@ -91,6 +48,62 @@ confirmpass.addEventListener("change", (event) => {
     }
     else{
         submitBtn.type = "button";
+    }
+})
+
+birthdate.addEventListener("change", () => {
+    const dayValue = parseInt(birthdate.value.slice(8, 10));
+    const monthValue = parseInt(birthdate.value.slice(5, 7));
+    const yearValue = parseInt(birthdate.value.slice(0, 4));
+
+    birthdayInputValue.value = dayValue;
+    monthInputValue.value = monthValue;
+    yearInputValue.value = yearValue;
+
+    if(yearValue > yearNow || yearValue == yearNow || yearValue > yearNow - 10){
+        alert("Sorry you are not eligible for registration. You must be 10 years of age to register");
+            ageValue.value = "";
+            birthdate.value = "";
+            birthdayInputValue.value = "";
+            monthInputValue.value = "";
+            yearInputValue.value = "";
+    }
+    else{
+        if(monthValue < monthNow){
+            updateAgeValue(yearValue);
+        }
+        else if(monthValue == monthNow){
+            if(dayValue < dayNow || dayValue == dayNow){
+                updateAgeValue(yearValue);
+            }
+            else if(dayValue > dayNow){
+                const adjustedYear = yearValue + 1;
+                console.log(adjustedYear);
+                updateAgeValue(adjustedYear);
+                if(ageValue.value < 10){
+                    alert("Sorry you are not eligible for registration. You must be 10 years of age to register");
+                    ageValue.value = "";
+                    birthdate.value = "";
+                    birthdayInputValue.value = "";
+                    monthInputValue.value = "";
+                    yearInputValue.value = "";
+                }
+            };
+            
+        }
+        else if(monthValue > monthNow){
+            const adjustedYear = yearValue + 1;
+            console.log(adjustedYear);
+            updateAgeValue(adjustedYear);
+            if(ageValue.value < 10){
+                alert("Sorry you are not eligible for registration. You must be 10 years of age to register");
+                ageValue.value = "";
+                birthdate.value = "";
+                birthdayInputValue.value = "";
+                monthInputValue.value = "";
+                yearInputValue.value = "";
+            }
+        }
     }
 })
 
@@ -104,9 +117,14 @@ submitBtn.addEventListener("click", () => {
     }
 })
 
+ageValue.addEventListener("change", () => {
+    ageValue.value = ageValueInput;
+})
+
 // Function to update ageValue
-function updateAgeValue() {
-    const year = parseInt(yearValue.value);
+function updateAgeValue(yearValue) {
+    const year = yearValue;
     const age = yearNow - year;
-    ageValue.value = age;
+    ageValueInput = age;
+    ageValue.value = ageValueInput;
 }
