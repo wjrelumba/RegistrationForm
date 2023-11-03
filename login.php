@@ -36,12 +36,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
     <h1>Account Login</h1>
     <form action="" method="post">
-        <input type="text" name="usernameInput" id="usernameInput" required>
-        <input type="password" name="passInput" id="passInput" required>
+        <input type="text" name="usernameInput" id="usernameInput" required placeholder="Username">
+        <input type="password" name="passInput" id="passInput" required placeholder="Password">
         <button type="submit">Submit</button>
     </form>
     <a href="index.php">
