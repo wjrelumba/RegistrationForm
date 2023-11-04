@@ -12,6 +12,7 @@
             <h1 class="registration-form-title">ADVENTURER PROFILE</h1>
             
             <?php
+            $startCount = 0;
             $userData = $_GET["data"];
             $titles = array("First Name", "Middle Initial", "Last Name", "Birthdate", "Age", "Gender", "Region", "Phone", "Email", "Username");
 
@@ -20,8 +21,9 @@
                 echo '<div class="form-group">';
                 echo '<label for="' . $titleNoSpaces . '">' . $title . ':</label>';
                 
-                if (isset($userData[$title])) {
-                    echo '<span id="' . $titleNoSpaces . '">' . $userData[$title] . '</span>';
+                if (isset($userData[$startCount])) {
+                    echo '<span id="' . $titleNoSpaces . '">' . $userData[$startCount] . '</span>';
+                    $startCount ++;
                 } else {
                     echo '<span id="' . $titleNoSpaces . '">Data not available</span>';
                 }
