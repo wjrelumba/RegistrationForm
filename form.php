@@ -6,16 +6,26 @@
     <title>Registration Form</title>
     <link rel="stylesheet" href="DESIGN/styles.css" type="text/css">
 </head>
-<body>
+<body class="registration-form-page">
+    <div class="registration-form-container">
+    <div class="registration-form">
+    <h1 class="registration-form-title">Registration Form</h1>
     <form action="receiveData.php" method="post">
-        <label for="">Name: </label> <br>
-        <label for="fname">First Name: </label>
-        <input type="text" name="fname" id="fname" placeholder="Juan Shanks" required>
-        <label for="minitial">Middle Initial: </label>
-        <input type="text" name="minitial" id="minitial" placeholder="D.">
-        <label for="lname">Last Name: </label>
-        <input type="text" name="lname" id="lname" placeholder="Dela Cruz" required> <br>
-        <label for="birthday">Birth Date: </label> <br>
+        <label for="">Name: </label>
+        <!-- <label for="fname">First Name: </label>
+        <input type="text" name="fname" id="fname" placeholder="Juan Shanks" required> -->
+        
+        <!-- <label for="minitial">Middle Initial: </label>
+        <input type="text" name="minitial" id="minitial" placeholder="D."> -->
+    
+        <!-- <label for="lname">Last Name: </label>
+        <input type="text" name="lname" id="lname" placeholder="Dela Cruz" required> <br> -->
+
+        <input type="text" name="fname" id="fname" placeholder="First Name" required>
+        <input type="text" name="minitial" id="minitial" placeholder="Middle Initial">
+        <input type="text" name="lname" id="lname" placeholder="Last Name" required> <br>
+        
+        <label for="birthday">Birthdate: </label>
         <input type="date" name="birthdate" id="birthdate">
         <input type="number" name="month" id="month" hidden>
         <input type="number" name="day" id="day" hidden>
@@ -57,25 +67,26 @@
         <input type="email" name="email" id="email" required>
         <br><br>
         <label for="username">Username: </label>
-        <input type="text" name="username" id="username" placeholder="JSDC"> <br>
+        <input type="text" name="username" id="username" placeholder="Username"> <br>
         <label for="password">Password: </label>
         <input type="password" name="password" id="password" placeholder="Password"> <br>
         <label for="confirmpass">Confirm Password: </label>
         <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirm Password"> <br>
-        
+        </div>
 
         <!-- <button type="button" id="checkerBtn">
         Check data
         </button> -->
-        <button type="submit" id="submitBtn">Submit</button> <br>
+        <div class="registration-form-button">
+        <button type="submit" id="submitBtn">Submit</button>
     </form>
     
-    <a href="index.php">
-        <button>
-            Back
-        </button>
+    <a href="index.php" class="back-btn">
+        Go back
     </a>
+        </div>
     <script type="text/javascript" src="formFunction.js">
     </script>
+    </div>
 </body>
 </html>

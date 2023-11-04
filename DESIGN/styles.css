@@ -29,25 +29,93 @@ body {
     text-shadow: 3px 3px #000000;
 }
 
+.registration-form-page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+
+    background-image: url('register-hiking.jpg');
+    background-size: cover;
+    width: 60%;
+    height: 100vh;
+    margin: 20px;
+    margin-top: 0px;
+}
+
+.registration-form-container {
+    width: 90%;
+    padding-left: 30px;
+    color: #ffffff;
+    background-color: rgba(74, 129, 147, 0.8);
+    margin-top: -28px;
+    margin-right: -1300px;
+    border-radius: 7.8%;
+    padding: 10px 20px;
+}
+
+.registration-form-title {
+    padding-top: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.registration-form, label {
+    padding: 10px 15px;
+    text-align: left;
+    justify-content: center;
+}
+
 /* Style the buttons */
-.landing-page-btn {
+.landing-page-btn-div {
     padding: 80px;
 }
 
-button {
+.landing-page-btn {
     width: 160px; /* Set a fixed width for the buttons */
     height: 60px;
+    margin: 10px 20px;
+    font-size: 15px;
+}
+
+button {
+    width: 120px; /* Set a fixed width for the buttons */
+    height: 40px;
     padding: 10px 20px;
     background-color: #4a8193;
     color: #fff;
     border: none;
     border-radius: 5px;
-    margin: 10px 20px;
+    margin: 10px;
     cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 12px;
 }
+
+.registration-form-button {
+    padding: 30px 20px;
+}
+
+.back-btn {
+    color: #fff;
+}
+
+#submitBtn {
+    color: #4a8193;
+    background-color: #fff;
+}
+
+#birthdate {
+    text-align: center;
+}
+
+#birthdate, #age, #gender, #region, #phone, #email,
+#username, #password, #confirmpass, select {
+    width: 30%; /* Set a fixed width for all input elements */
+}
+
 
 /* Change button color on hover */
 button:hover {

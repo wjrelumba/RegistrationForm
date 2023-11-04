@@ -10,14 +10,14 @@
     <div class="landing-page-title">
         <h1>EXPLORE THE WORLD</h1>
         <h2>WITHIN YOUR FINGERTIPS</h2>
-    <div class="landing-page-btn">
+    <div class="landing-page-btn-div">
     <a href="form.php">
-        <button type="button">
+        <button type="button" class="landing-page-btn">
             Register
         </button>
     </a>
     <a href="login.php">
-        <button type="button">
+        <button type="button" class="landing-page-btn">
             Login
         </button>
     </a>
