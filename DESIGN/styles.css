@@ -61,11 +61,73 @@ body {
     justify-content: center;
 }
 
+.registration-form {
+    max-width: 790px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0); /* Add transparency */
+    border-radius: 10px;
+    margin-left: -20px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.form-group label {
+    flex: 1;
+    text-align: left;
+    margin-right: 15px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select {
+    flex: 2;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-input {
+    margin-left: 30px;
+}
+
+.column {
+    flex: 1;
+}
+
+.column label {
+    display: block; /* Display labels as blocks to separate them from inputs */
+}
+
 .registration-form, label {
     padding: 10px 15px;
     text-align: left;
     justify-content: center;
 }
+
+.gender-options {
+    display: flex;
+    align-items: right;
+    flex-wrap: wrap;
+}
+
+.gender-options input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Optional: To adjust the spacing between "Gender" and the radio buttons */
+label[for="gender"] {
+    margin-right: 10px;
+}
+
 
 /* Style the buttons */
 .landing-page-btn-div {
@@ -107,11 +169,17 @@ button {
     background-color: #fff;
 }
 
-#birthdate {
+#birthdate, #age {
     text-align: center;
+    width: 60%
 }
 
-#birthdate, #age, #gender, #region, #phone, #email,
+#gender {
+    width: 20%;
+    height: 25px;
+}
+
+#region, #phone, #email,
 #username, #password, #confirmpass, select {
     width: 30%; /* Set a fixed width for all input elements */
 }
