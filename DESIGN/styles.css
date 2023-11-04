@@ -164,9 +164,19 @@ button {
     color: #fff;
 }
 
-#submitBtn {
+.back-btn:hover {
+    color: #fff;
+    opacity: 80%;
+}
+
+#submitBtn, .login-submit {
     color: #4a8193;
     background-color: #fff;
+}
+
+#submitBtn:hover, .login-submit:hover {
+    color: #4a8193;
+    background-color: rgb(212, 212, 212);
 }
 
 #birthdate, #age {
@@ -188,4 +198,41 @@ button {
 /* Change button color on hover */
 button:hover {
     background-color: #407282;
+}
+
+.login-title {
+    padding-top: 20px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.login-form {
+    padding: 10px 65px;
+    align-items: center;
+}
+
+.login-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+#loginContainer {
+    position: fixed;
+    top: 0;
+    right: 0px; 
+    width: 300px;
+    height: 100%;
+    background: #4a8193;
+    transition: right 0.3s ease-in-out; 
+    z-index: 1;
+}
+
+#loginContainer.active {
+    right: 0; 
 }

@@ -1,11 +1,3 @@
-<?php
-    $userData = $_GET["data"];
-    //$userDataArray = explode(",", $userData);
-    
-    foreach($userData as $userData){
-        echo $userData, "<br>";
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +6,34 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="DESIGN/styles.css" type="text/css">
 </head>
-<body>
-    <a href="index.php">
-        <button>
-            Log Out!
-        </button>
-    </a>
+<body class="registration-form-page">
+    <div class="registration-form-container">
+        <div class="registration-form">
+            <h1 class="registration-form-title">ADVENTURER PROFILE</h1>
+            
+            <?php
+            $userData = $_GET["data"];
+            $titles = array("First Name", "Middle Initial", "Last Name", "Birthdate", "Age", "Gender", "Region", "Phone", "Email", "Username");
+
+            foreach ($titles as $title) {
+                $titleNoSpaces = strtolower(str_replace(' ', '', $title));
+                echo '<div class="form-group">';
+                echo '<label for="' . $titleNoSpaces . '">' . $title . ':</label>';
+                
+                if (isset($userData[$title])) {
+                    echo '<span id="' . $titleNoSpaces . '">' . $userData[$title] . '</span>';
+                } else {
+                    echo '<span id="' . $titleNoSpaces . '">Data not available</span>';
+                }
+                
+                echo '</div>';
+            }
+            ?>
+            
+        </div>
+        <a href="index.php" class="back-btn">
+            Go back
+        </a>
+    </div>
 </body>
 </html>

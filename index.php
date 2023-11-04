@@ -16,11 +16,16 @@
             Register
         </button>
     </a>
-    <a href="login.php">
+    <!-- <a href="login.php">
         <button type="button" class="landing-page-btn">
             Login
         </button>
-    </a>
+    </a> -->
+        <button type="button" class="landing-page-btn" id="showLogin">Login</button>
     </div>
+    <div id="loginContainer" class="hidden">
+        <?php include 'login.php'; ?>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -40,16 +40,24 @@
     <link rel="stylesheet" href="DESIGN/styles.css" type="text/css">
 </head>
 <body>
-    <h1>Account Login</h1>
+    <h3 class="login-title">Account Login</h3>
+    <div class="login-form">
     <form action="" method="post">
+        <div class="login-group">
         <input type="text" name="usernameInput" id="usernameInput" required placeholder="Username">
+        </div>
+
+        <div class="login-group">
         <input type="password" name="passInput" id="passInput" required placeholder="Password">
-        <button type="submit">Submit</button>
+        </div>
+        
+        <button class="login-submit" type="submit">Submit</button>
     </form>
-    <a href="index.php">
+    </div>
+    <!-- <a href="index.php">
         <button>
             Back
         </button>
-    </a>
+    </a> -->
 </body>
 </html>

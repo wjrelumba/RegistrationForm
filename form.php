@@ -9,7 +9,7 @@
 <body class="registration-form-page">
     <div class="registration-form-container">
     <div class="registration-form">
-    <h1 class="registration-form-title">Registration Form</h1>
+    <h1 class="registration-form-title">REGISTRATION FORM</h1>
     <form action="receiveData.php" method="post">
         <!-- <label for="">Name: </label> -->
         <!-- <label for="fname">First Name: </label>
