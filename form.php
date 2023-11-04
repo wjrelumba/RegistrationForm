@@ -21,7 +21,7 @@
         <input type="number" name="day" id="day" hidden>
         <input type="number" name="year" id="year" hidden> <br>
         <label for="age">Age:</label>
-        <input type="number" name="age" id="age"> <br>
+        <input type="number" name="age" id="age" readonly> <br>
         <label for="gender">Gender:</label> <br>
         <input type="radio" name="gender" id="male" value="Male" required>
         <label for="male">Male</label> <br>

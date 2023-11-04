@@ -28,6 +28,7 @@
             echo "Account not found";
         }
     };   
+    $conn->close();
 ?>
 
 <!DOCTYPE html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Admission</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="DESIGN/styles.css" type="text/css">
 </head>
 <body class="landing-page-bg">
     <div class="landing-page-title">

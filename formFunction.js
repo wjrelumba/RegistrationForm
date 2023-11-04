@@ -11,9 +11,7 @@ const dayNow = dateToday.getDate();
 const monthNow = dateToday.getMonth() + 1;
 
 const birthdate = document.getElementById("birthdate");
-
 const submitBtn = document.getElementById("submitBtn");
-const checkBtn = document.getElementById("checkerBtn");
 const password = document.getElementById("password");
 const confirmpass = document.getElementById("confirmpass");
 var monthInput = 0;
