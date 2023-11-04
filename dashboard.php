@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="DESIGN/styles.css" type="text/css">
 </head>
 <body class="registration-form-page">
-    <div class="registration-form-container">
+    <div class="quote">"When life gives you lemons, make lemonade."</div>
+    <div class="author">- William Shakespeare</div>
+    <div class="profile-form-container">
         <div class="registration-form">
             <h1 class="registration-form-title">ADVENTURER PROFILE</h1>
             
@@ -18,7 +20,7 @@
 
             foreach ($titles as $title) {
                 $titleNoSpaces = strtolower(str_replace(' ', '', $title));
-                echo '<div class="form-group">';
+                echo '<div class="profile-group">';
                 echo '<label for="' . $titleNoSpaces . '">' . $title . ':</label>';
                 
                 if (isset($userData[$startCount])) {
