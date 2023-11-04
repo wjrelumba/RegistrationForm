@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
-    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="DESIGN/styles.css" type="text/css">
 </head>
 <body>
     <form action="receiveData.php" method="post">
@@ -64,9 +64,9 @@
         <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirm Password"> <br>
         
 
-        <button type="button" id="checkerBtn">
+        <!-- <button type="button" id="checkerBtn">
         Check data
-        </button>
+        </button> -->
         <button type="submit" id="submitBtn">Submit</button> <br>
     </form>
     
