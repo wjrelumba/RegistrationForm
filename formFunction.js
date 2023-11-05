@@ -5,10 +5,13 @@ const birthdayInputValue = document.getElementById("day");
 const monthInputValue = document.getElementById("month");
 const yearInputValue = document.getElementById("year");
 const ageValue = document.getElementById("age");
+const phoneNum = document.getElementById("phone");
 const dateToday = new Date();
 const yearNow = dateToday.getFullYear();
 const dayNow = dateToday.getDate();
 const monthNow = dateToday.getMonth() + 1;
+
+const username = document.getElementById("username");
 
 const birthdate = document.getElementById("birthdate");
 const submitBtn = document.getElementById("submitBtn");
@@ -16,9 +19,48 @@ const password = document.getElementById("password");
 const confirmpass = document.getElementById("confirmpass");
 var monthInput = 0;
 
+var usernames = [];
+
 submitBtn.type = "button";
 
+var numberAccepted = false;
+
 var ageValueInput = 0;
+
+setTimeout(function() {
+    usernames = document.querySelectorAll("input.usernames");
+}, 1000);
+
+username.addEventListener("change", (event) => {
+    var value = event.target.value;
+    usernames.forEach(input => {
+        if(value == input.value){
+            alert("Username is already taken. Please try another.")
+            username.value = "";
+        }
+    })
+})
+
+phoneNum.addEventListener("change", (event) => {
+    var value = event.target.value;
+    var length = 10;
+    var newNum = "";
+    if(value.length > length){
+        var strValue = String(value)
+        for(let i = 0; i < 10; i++){
+            newNum += value[i];
+        }
+        event.target.value = newNum;
+        numberAccepted = true;
+    }
+    if(value.length < length){
+        alert("Number is invalid")
+        numberAccepted = false;
+    }
+    if(value.length == length){
+        numberAccepted = true;
+    }
+})
 
 
 maleRadioValue.addEventListener("click", (event) => {
@@ -110,8 +152,12 @@ submitBtn.addEventListener("click", () => {
         alert("Passwords do not match");
         submitBtn.type = "button";
     }
-    else{
+    else if(numberAccepted == true && password.value == confirmpass.value && password.value != ""){
         submitBtn.type = "submit";
+    }
+    else if(numberAccepted != true && password.value == confirmpass.value && phoneNum.value != ""){
+        alert("Invalid number input.");
+        submitBtn.type = "button";
     }
 })
 

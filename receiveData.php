@@ -16,6 +16,8 @@
 
     $birthdate = "$month/$day/$year";
 
+    $phone = "(+63)" . $phone;
+
     echo $birthdate;
 
     $conn = new mysqli("localhost", "root", "", "registrationAct2");

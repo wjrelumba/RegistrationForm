@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2023 at 04:46 PM
+-- Generation Time: Nov 05, 2023 at 07:05 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -35,7 +35,7 @@ CREATE TABLE `user` (
   `age` int(30) NOT NULL,
   `gender` varchar(30) NOT NULL,
   `region` varchar(30) NOT NULL,
-  `phone` int(30) NOT NULL,
+  `phone` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL
@@ -46,11 +46,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`fname`, `minitial`, `lname`, `birthdate`, `age`, `gender`, `region`, `phone`, `email`, `username`, `password`) VALUES
-('Luffy', 'D.', 'Monkey', '5/5/2006', 17, 'male', 'Bicol Region', 2147483647, 'luffylovesmeat@strawhat.grandl', 'LDM', '1234'),
-('Juan Shanks', 'D.', 'Roger', '1/5/1985', 38, 'male', 'CALABARZON', 2147483647, 'red@shanks.crew', 'JSDR', 'asdf'),
-('Simon', 'C.', 'Monde', '1/1/2002', 21, 'male', 'CALABARZON', 1234567890, 'simon@gmail.com', 'SCM', '1234asdf'),
-('Nagato', 'D.', 'Shippuden', '10/10/1978', 45, 'female', 'Central Luzon', 1234123123, '123123123@gmail.com', 'NDS', '123456789'),
-('Tom', 'R.', 'Hanks', '1/1/1980', 43, 'male', 'CALABARZON', 1234567890, 'tomhanks@gmail.com', 'TDH', 'asdf');
+('Luffy', 'D.', 'Monkey', '5/5/2006', 17, 'male', 'Bicol Region', '2147483647', 'luffylovesmeat@strawhat.grandl', 'LDM', '1234'),
+('Juan Shanks', 'D.', 'Roger', '1/5/1985', 38, 'male', 'CALABARZON', '2147483647', 'red@shanks.crew', 'JSDR', 'asdf'),
+('Simon', 'C.', 'Monde', '1/1/2002', 21, 'male', 'CALABARZON', '1234567890', 'simon@gmail.com', 'SCM', '1234asdf'),
+('Nagato', 'D.', 'Shippuden', '10/10/1978', 45, 'female', 'Central Luzon', '1234123123', '123123123@gmail.com', 'NDS', '123456789'),
+('Tom', 'R.', 'Hanks', '1/1/1980', 43, 'male', 'CALABARZON', '1234567890', 'tomhanks@gmail.com', 'TDH', 'asdf');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

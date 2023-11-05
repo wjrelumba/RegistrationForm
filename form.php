@@ -1,3 +1,17 @@
+<?php
+    $conn = new mysqli("localhost", "root", "", "registrationAct2");
+
+    $sql = "SELECT * FROM user";
+    $result = $conn->query($sql);
+
+    if($result -> num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "<input type='text' class='usernames' name='usernames' value='$row[username]' hidden>";
+        }
+    };
+
+    $conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +21,9 @@
     <link rel="stylesheet" href="DESIGN/styles.css" type="text/css">
 </head>
 <body class="registration-form-page">
+    <div class="logo">
+        <img src="DESIGN/logo.png" alt="">
+    </div>
     <div class="quote">"Hike more distance away from Heaven's Door."</div>
     <div class="author">- William Shakespeare</div>
     <div class="registration-form-container">
@@ -138,7 +155,7 @@
 
         <div class="form-group">
         <label for="phone">Phone Number (+63): </label>
-        <input type="number" name="phone" id="phone" maxlength="999999999" required> <br>
+        <input type="number" name="phone" id="phone" required> <br>
         </div>
 
         <div class="form-group">

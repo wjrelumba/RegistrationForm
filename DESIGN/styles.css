@@ -274,3 +274,11 @@ button:hover {
 #loginContainer.active {
     right: 0; 
 }
+
+.logo {
+    position: relative;
+    margin-left: 10%;
+    height: 10%;
+    width: 10%;
+    background-image: url('logo');
+}
