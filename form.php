@@ -21,9 +21,6 @@
     <link rel="stylesheet" href="DESIGN/styles.css" type="text/css">
 </head>
 <body class="registration-form-page">
-    <div class="logo">
-        <img src="DESIGN/logo.png" alt="">
-    </div>
     <div class="quote">"Hike more distance away from Heaven's Door."</div>
     <div class="author">- William Shakespeare</div>
     <div class="registration-form-container">
