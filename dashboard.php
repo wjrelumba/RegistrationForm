@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="DESIGN/styles.css" type="text/css">
 </head>
 <body class="registration-form-page">
+<img src="DESIGN/logo.png" alt="climb-logo" class="logo">
     <div class="quote">"When life gives you lemons, make lemonade."</div>
     <div class="author">- William Shakespeare</div>
     <div class="profile-form-container">

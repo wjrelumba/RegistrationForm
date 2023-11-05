@@ -54,10 +54,5 @@
         <button class="login-submit" type="submit">Submit</button>
     </form>
     </div>
-    <!-- <a href="index.php">
-        <button>
-            Back
-        </button>
-    </a> -->
 </body>
 </html>

@@ -274,3 +274,8 @@ button:hover {
 #loginContainer.active {
     right: 0; 
 }
+
+img.logo {
+    position: absolute;
+    box-shadow: 2px 2px;
+}

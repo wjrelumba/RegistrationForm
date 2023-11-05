@@ -21,26 +21,13 @@
     <link rel="stylesheet" href="DESIGN/styles.css" type="text/css">
 </head>
 <body class="registration-form-page">
+<img src="DESIGN/logo.png" alt="climb-logo" class="logo">
     <div class="quote">"Hike more distance away from Heaven's Door."</div>
     <div class="author">- William Shakespeare</div>
     <div class="registration-form-container">
     <div class="registration-form">
     <h1 class="registration-form-title">REGISTRATION FORM</h1>
     <form action="receiveData.php" method="post">
-        <!-- <label for="">Name: </label> -->
-        <!-- <label for="fname">First Name: </label>
-        <input type="text" name="fname" id="fname" placeholder="Juan Shanks" required> -->
-        
-        <!-- <label for="minitial">Middle Initial: </label>
-        <input type="text" name="minitial" id="minitial" placeholder="D."> -->
-    
-        <!-- <label for="lname">Last Name: </label>
-        <input type="text" name="lname" id="lname" placeholder="Dela Cruz" required> <br> -->
-
-        <!-- <input type="text" name="fname" id="fname" placeholder="First Name" required>
-        <input type="text" name="minitial" id="minitial" placeholder="Middle Initial">
-        <input type="text" name="lname" id="lname" placeholder="Last Name" required> <br> -->
-
         <div class="form-group">
         <label for="fname">First Name:</label>
         <input type="text" name="fname" id="fname" placeholder="First Name" required>
@@ -56,17 +43,6 @@
         <input type="text" name="lname" id="lname" placeholder="Last Name" required>
         </div>
 
-        <!-- <div class="form-group">
-        <label for="birthday">Birthdate: </label>
-        <input type="date" name="birthdate" id="birthdate">
-        <input type="number" name="month" id="month" hidden>
-        <input type="number" name="day" id="day" hidden>
-        <input type="number" name="year" id="year" hidden> <br>
-        </div>
-        
-        <label for="age">Age:</label>
-        <input type="number" name="age" id="age" readonly> <br> -->
-
         <div class="form-group">
         <label for="birthday">Birthdate: </label>
         <input type="date" name="birthdate" id="birthdate">
@@ -80,34 +56,6 @@
         <input type="number" name="age" id="age" readonly>
         </div>
 
-        <!-- <div class="form-group">
-        <div class="column">
-        <label for="birthday">Birthdate: </label>
-        <div class="form-input">
-        <input type="date" name="birthdate" id="birthdate">
-        <input type="number" name="month" id="month" hidden>
-        <input type="number" name="day" id="day" hidden>
-        <input type="number" name="year" id="year" hidden> <br>
-        </div>
-        </div>
-        <div class="form-input">
-        <div class="column">
-        <label for="age">Age:</label>
-        <input type="number" name="age" id="age" readonly>
-        </div>
-        </div>
-        </div>   -->
-
-
-        <!-- <label for="gender">Gender:</label> <br>
-        <input type="radio" name="gender" id="male" value="Male" required>
-        <label for="male">Male</label> <br>
-        <input type="radio" name="gender" id="female" value="Female" required>
-        <label for="female">Female</label> <br>
-        <input type="radio" name="gender" id="others" value="Others" required>
-        <label for="others">Others</label> <br>
-        <input type="text" name="gender" id="gender" disabled> <br> -->
-
         <div class="form-group">
         <label for="gender">Gender:</label> <nobr>
         <div class="gender-options">
@@ -117,14 +65,6 @@
         <input type="text" name="gender" id="gender" disabled>
         </div>
         </div>
-<!-- 
-        <label for="gender">Gender:</label> <nobr>
-        <div class="gender-options">
-        <label for="male"><input type="radio" name="gender" id="male" value="Male" required> Male</label>
-        <label for="female"><input type="radio" name="gender" id="female" value="Female" required> Female</label>
-        <label for="others"><input type="radio" name="gender" id="others" value="Others" required> Others</label>
-        <input type="text" name="gender" id="gender" disabled>
-        </div> -->
 
         <div class="form-group">
         <label for="region">Region:</label>
@@ -178,9 +118,6 @@
 
         </div>
 
-        <!-- <button type="button" id="checkerBtn">
-        Check data
-        </button> -->
         <div class="registration-form-button">
         <button type="submit" id="submitBtn">Submit</button>
     </form>
