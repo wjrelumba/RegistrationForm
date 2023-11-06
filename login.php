@@ -12,13 +12,15 @@
 
         $accountFound = false;
         while($row = $result->fetch_assoc()){
-            if($row["password"]  == $pass && $row["username"] == $username){
-                $userArray = [$row["fname"], $row["minitial"], $row["lname"], $row["birthdate"], $row["age"], $row["gender"], $row["region"], $row["phone"], $row["email"], $row["username"]];
-                $queryString = http_build_query(["data" => $userArray]);
-                header("Location: dashboard.php?$queryString");
-                
-                $accountFound = true;
-                break;
+            if($row["username"] == $username){
+                if(password_verify($pass, $row["password"])){
+                    $userArray = [$row["fname"], $row["minitial"], $row["lname"], $row["birthdate"], $row["age"], $row["gender"], $row["region"], $row["phone"], $row["email"], $row["username"]];
+                    $queryString = http_build_query(["data" => $userArray]);
+                    header("Location: dashboard.php?$queryString");
+                    
+                    $accountFound = true;
+                    break;
+                }
             }
             else{
                 

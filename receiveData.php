@@ -16,6 +16,8 @@
 
     $birthdate = "$month/$day/$year";
 
+    $hashedPass = password_hash($password, PASSWORD_DEFAULT);
+
     $phone = "(+63)" . $phone;
 
     echo $birthdate;
@@ -26,7 +28,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
     
-    $sqlinsert = "INSERT INTO user (fname, minitial, lname, birthdate, age, gender, region, phone, email, username, password) VALUES ('$fname', '$minitial', '$lname', '$birthdate', '$age', '$gender', '$region', '$phone', '$email', '$username', '$password')";
+    $sqlinsert = "INSERT INTO user (fname, minitial, lname, birthdate, age, gender, region, phone, email, username, password) VALUES ('$fname', '$minitial', '$lname', '$birthdate', '$age', '$gender', '$region', '$phone', '$email', '$username', '$hashedPass')";
     
     $insertForm = $conn->query($sqlinsert);
 
