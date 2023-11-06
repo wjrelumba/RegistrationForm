@@ -244,6 +244,10 @@ button:hover {
     color: #fff;
 }
 
+.sign-out-button {
+    width: 1000px;
+}
+
 .login-form {
     padding: 10px 65px;
     align-items: center;
@@ -277,5 +281,6 @@ button:hover {
 
 img.logo {
     position: absolute;
-    box-shadow: 2px 2px;
+    margin-left: -250px;
+    
 }

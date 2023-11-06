@@ -27,7 +27,7 @@
     <div class="registration-form-container">
     <div class="registration-form">
     <h1 class="registration-form-title">REGISTRATION FORM</h1>
-    <form action="receiveData.php" method="post">
+    <form action="receiveData.php" method="post" id="registrationForm">
         <div class="form-group">
         <label for="fname">First Name:</label>
         <input type="text" name="fname" id="fname" placeholder="First Name" required>
@@ -126,8 +126,7 @@
         Go back
     </a>
         </div>
-    <script type="text/javascript" src="formFunction.js">
-    </script>
+    <script type="text/javascript" src="formFunction.js"></script>
     </div>
 </body>
 </html>

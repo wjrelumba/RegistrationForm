@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="DESIGN/styles.css" type="text/css">
 </head>
 <body class="landing-page-bg">
+
+    <div id="successNotification" class="hidden">
+        <!-- Your success notification content -->
+        <p>Your registration was successful!</p>
+    </div>
     
     <div class="landing-page-title">
         <h1>EXPLORE THE WORLD</h1>
@@ -23,5 +28,16 @@
         <?php include 'login.php'; ?>
     </div>
     <script src="script.js"></script>
+
+    <script>
+        // Check for the session variable or cookie
+        const formSubmitted = <?php echo isset($_SESSION['formSubmitted']) ? 'true' : 'false'; ?>;
+        
+        // If the form was successfully submitted, show the success notification
+        if (formSubmitted) {
+            const successNotification = document.getElementById('successNotification');
+            successNotification.classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>

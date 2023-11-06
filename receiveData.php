@@ -42,6 +42,8 @@
         }
     }
 
+    $_SESSION['formSubmitted'] = true;
+
     $conn->close();
 ?>
 
