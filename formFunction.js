@@ -172,22 +172,3 @@ function updateAgeValue(yearValue) {
     ageValueInput = age;
     ageValue.value = ageValueInput;
 }
-
-const form = document.getElementById("registrationForm");
-    
-    form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the form from submitting by default.
-
-        const emptyFields = requiredFields.filter((field) => {
-            const inputField = document.getElementById(field);
-            return inputField.value.trim() === "";
-        });
-
-        if (emptyFields.length > 0) {
-            // Notify the user about empty fields.
-            alert("Please fill out all required fields.");
-        } else {
-            // If all required fields are filled, submit the form.
-            form.submit();
-        }
-    });

@@ -1,24 +1,26 @@
 <?php
-    $fname = $_POST["fname"];
-    $minitial = $_POST["minitial"];
-    $lname = $_POST["lname"];
-    $month = $_POST["month"];
-    $day = $_POST["day"];
-    $year = $_POST["year"];
-    $age = $_POST["age"];
-    $gender = $_POST["gender"];
-    $region = $_POST["region"];
-    $phone = $_POST["phone"];
-    $email = $_POST["email"];
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $confirmpass = $_POST["confirmpass"];
+    session_start();
+
+    $fname = $_SESSION["fname"];
+    $minitial = $_SESSION["minitial"];
+    $lname = $_SESSION["lname"];
+    $month = $_SESSION["month"];
+    $day = $_SESSION["day"];
+    $year = $_SESSION["year"];
+    $age = $_SESSION["age"];
+    $gender = $_SESSION["gender"];
+    $region = $_SESSION["region"];
+    $phone = $_SESSION["phone"];
+    $email = $_SESSION["email"];
+    $username = $_SESSION["username"];
+    $password = $_SESSION["password"];
+    $confirmpass = $_SESSION["confirmpass"];
 
     $birthdate = "$month/$day/$year";
 
-    $hashedPass = password_hash($password, PASSWORD_DEFAULT);
-
     $phone = "(+63)" . $phone;
+
+    $hashedPass = password_hash($password, PASSWORD_DEFAULT);
 
     echo $birthdate;
 
@@ -44,8 +46,6 @@
         }
     }
 
-    $_SESSION['formSubmitted'] = true;
-
     $conn->close();
 ?>
 
@@ -65,3 +65,7 @@
     </script>
 </body>
 </html>
+
+<?php
+    session_destroy();
+?>

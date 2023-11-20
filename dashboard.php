@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +19,6 @@
             
             <?php
             $startCount = 0;
-            $userData = $_GET["data"];
             $titles = array("First Name", "Middle Initial", "Last Name", "Birthdate", "Age", "Gender", "Region", "Phone", "Email", "Username");
 
             foreach ($titles as $title) {
@@ -24,8 +26,8 @@
                 echo '<div class="profile-group">';
                 echo '<label for="' . $titleNoSpaces . '">' . $title . ':</label>';
                 
-                if (isset($userData[$startCount])) {
-                    echo '<span id="' . $titleNoSpaces . '">' . $userData[$startCount] . '</span>';
+                if (isset($_SESSION["userData"])) {
+                    echo '<span id="' . $titleNoSpaces . '">' . $_SESSION['userData'][$startCount] . '</span>';
                     $startCount ++;
                 } else {
                     echo '<span id="' . $titleNoSpaces . '">Data not available</span>';
@@ -36,10 +38,11 @@
             ?>
             
         </div>
-        <button id="submitBtn">
-            <a href="index.php" class="sign-out-button">Sign Out</a>
-        </button>
-
+        <form action="logout.php">
+            <button id="submitBtn">
+                Log Out
+            </button>
+        </form>
     </div>
 
     <script>

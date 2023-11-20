@@ -1,35 +1,41 @@
 <?php 
+    session_start();
     $conn = new mysqli("localhost", "root", "", "registrationAct2");
     $sqlSelect = "SELECT * FROM user";
 
     $result = $conn->query($sqlSelect);
 
-    if(isset($_POST["passInput"])){
-        if(isset($_POST["usernameInput"])){
-            $username = $_POST["usernameInput"];
-        };
-        $pass = $_POST["passInput"];
-
-        $accountFound = false;
-        while($row = $result->fetch_assoc()){
-            if($row["username"] == $username){
-                if(password_verify($pass, $row["password"])){
-                    $userArray = [$row["fname"], $row["minitial"], $row["lname"], $row["birthdate"], $row["age"], $row["gender"], $row["region"], $row["phone"], $row["email"], $row["username"]];
-                    $queryString = http_build_query(["data" => $userArray]);
-                    header("Location: dashboard.php?$queryString");
+    if(isset($_SESSION["userData"])){
+        header("Location: dashboard.php");
+    };
+    if(!isset($_SESSION["userData"])){
+        if(isset($_POST["passInput"])){
+            if(isset($_POST["usernameInput"])){
+                $username = $_POST["usernameInput"];
+            };
+            $pass = $_POST["passInput"];
+    
+            $accountFound = false;
+            while($row = $result->fetch_assoc()){
+                if($row["username"] == $username){
+                    if(password_verify($pass, $row["password"])){
+                        $_SESSION["userData"] = [$row["fname"], $row["minitial"], $row["lname"], $row["birthdate"], $row["age"], $row["gender"], $row["region"], $row["phone"], $row["email"], $row["username"]];
+                        //$queryString = http_build_query(["data" => $userArray]);
+                        header("Location: dashboard.php");
+                        
+                        $accountFound = true;
+                        break;
+                    }
+                }
+                else{
                     
-                    $accountFound = true;
-                    break;
                 }
             }
-            else{
-                
+            if(!$accountFound) {
+                echo "Account not found";
             }
-        }
-        if(!$accountFound) {
-            echo "Account not found";
-        }
-    };   
+        };   
+    };
     $conn->close();
 ?>
 
@@ -44,6 +50,7 @@
 <body>
     <h3 class="login-title">Account Login</h3>
     <div class="login-form">
+    <?php if(!isset($_SESSION["userData"])): ?>
     <form action="" method="post">
         <div class="login-group">
         <input type="text" name="usernameInput" id="usernameInput" required placeholder="Username">
@@ -55,6 +62,7 @@
         
         <button class="login-submit" type="submit">Submit</button>
     </form>
+    <?php endif; ?>
     </div>
 </body>
 </html>
